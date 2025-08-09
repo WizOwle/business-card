@@ -1,0 +1,187 @@
+:root {
+  --rich-black: #03071eff;
+  --chocolate-cosmos: #370617ff;
+  --rosewood: #6a040fff;
+  --penn-red: #9d0208ff;
+  --engineering-orange: #d00000ff;
+  --sinopia: #dc2f02ff;
+  --persimmon: #e85d04ff;
+  --princeton-orange: #f48c06ff;
+  --orange-web: #faa307ff;
+  --selective-yellow: #ffba08ff;
+}
+
+::selection {
+  background-color: var(--persimmon);
+  color: snow;
+  -webkit-text-fill-color: snow;
+}
+
+::-moz-selection {
+  background-color: var(--persimmon);
+  color: snow;
+  -webkit-text-fill-color: snow;
+}
+
+::-webkit-selection {
+  background-color: var(--persimmon);
+  color: snow;
+  -webkit-text-fill-color: snow;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  background: linear-gradient(to top right, var(--persimmon), var(--rosewood));
+  margin: 0;
+  padding: 20px;
+
+  /*
+    Challenge:
+    Find a web safe font you like, and add it
+    to your card.
+    */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.card {
+  margin: 0;
+  padding: 20px;
+  width: 100%;
+  max-width: 550px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  text-align: left;
+  background: var(--chocolate-cosmos);
+  color: snow;
+  border-radius: 8px;
+  gap: 32px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease-out;
+  animation: slideIn 0.6s ease-out;
+}
+
+.card:hover {
+  box-shadow: 0 0 15px 10px var(--rosewood);
+  transform: scale(1.05);
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 200px;
+  /* aspect-ratio: 1 / 1; */
+  object-fit: cover;
+  align-self: center;
+}
+
+.divider {
+  background-color: var(--sinopia);
+  width: 1px;
+  border-radius: 20px;
+  align-self: stretch;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/*
+Stretch goals:
+Find other ways you can personalize 
+the design of your business card, e.g.:
+- change the border(s)
+- add border radius
+- shuffle the layout
+- shadows        🤯
+- hover effects  🤯🤯
+- animations     🤯🤯🤯
+*/
+
+a {
+  color: snow;
+  transition: color 0.3s ease;
+  font-weight: 400;
+}
+
+a:hover {
+  color: var(--persimmon);
+}
+
+.links-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+h1 {
+  font-size: x-large;
+  font-weight: 500;
+  margin: 0px;
+}
+
+h2 {
+  font-size: large;
+  font-weight: 500;
+
+  margin: 0px;
+  line-height: auto;
+}
+
+h3 {
+  font-size: medium;
+  font-weight: 400;
+
+  margin: 0px;
+}
+p {
+  margin: 0px;
+  font-weight: 400;
+  font-size: medium;
+}
+
+@media (max-width: 992px) {
+  .card {
+    margin: 24px auto;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .divider {
+    margin: 0px auto;
+    height: 1px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    margin: 24px auto;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
