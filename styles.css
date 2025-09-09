@@ -62,6 +62,7 @@ body {
   gap: 32px;
   transition: box-shadow 0.3s ease, transform 0.3s ease-out;
   animation: slideIn 0.6s ease-out;
+  border: 2px solid var(--penn-red);
 }
 
 .card:hover {
